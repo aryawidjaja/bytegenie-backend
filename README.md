@@ -61,19 +61,38 @@ I chose to use GPT-3.5-turbo-1106 because it's low cost and fast enough for my n
 
 ## How to Get Started
 
-1. **Setup Virtual Environment**:
+1. **Clone the Repository**:
+   ```sh
+   git clone https://github.com/aryawidjaja/bytegenie-backend.git
+   cd bytegenie-backend
+   ```
+
+2. **Setup Virtual Environment**:
    ```sh
    python -m venv venv
    source venv/bin/activate  # On Windows use `.\venv\Scripts\activate`
    pip install -r requirements.txt
    ```
 
-2. **Run the Application**:
+3. **Install Dependencies**:
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+4. **Create a `.env` File**:
+   Create a .env file in the root of the project and add your OpenAI API key:
+   ```makefile
+   OPENAI_API_KEY="your-openai-api-key"
+   ```
+
+4. **Initialize the Database**:
+Ensure your SQLite database is set up. If you don't have a database yet, initialize it using your database setup script from another repo.
+
+5. **Run the Application**:
    ```sh
    flask run
    ```
-
-3. **Send Queries to the API**:
+6. **Send Queries to the API**:
    - Use tools like Postman or curl to send POST requests to http://127.0.0.1:5000/query with a JSON body containing your natural language query.
 
 ## Example Query

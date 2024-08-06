@@ -11,8 +11,10 @@ def create_app():
     db.init_app(app)
 
     from app.resources.query import QueryResource
+    from app.resources.conversation import ConversationResource
 
     api = Api(app)
     api.add_resource(QueryResource, '/query')
+    api.add_resource(ConversationResource, '/conversation', '/conversation/delete')
 
     return app

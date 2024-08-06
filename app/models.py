@@ -38,3 +38,13 @@ class Person(db.Model):
     person_country = db.Column(db.String)
     email_pattern = db.Column(db.String)
     homepage_base_url = db.Column(db.String, db.ForeignKey('companies.homepage_base_url'))
+
+class Conversation(db.Model):
+    __tablename__ = 'conversations'
+    id = db.Column(db.Integer, primary_key=True)
+    user_query_summary = db.Column(db.String)
+    user_query = db.Column(db.String)
+    retrieved_data = db.Column(db.String)
+    model_response = db.Column(db.String)
+    date_time = db.Column(db.String)
+    query_status = db.Column(db.String)

@@ -1,4 +1,4 @@
-# ByteGenie Test - Backend API
+# ByteGenie Test - Backend API 🤖
 
 ## Overview
 

@@ -71,7 +71,6 @@ I chose to use GPT-3.5-turbo-1106 because it's low cost and fast enough for my n
    ```sh
    python -m venv venv
    source venv/bin/activate  # On Windows use `.\venv\Scripts\activate`
-   pip install -r requirements.txt
    ```
 
 3. **Install Dependencies**:
@@ -86,7 +85,7 @@ I chose to use GPT-3.5-turbo-1106 because it's low cost and fast enough for my n
    ```
 
 4. **Initialize the Database**:
-Ensure your SQLite database is set up. If you don't have a database yet, initialize it using your database setup script from another repo.
+   - Ensure your SQLite database is set up. If you don't have a database yet, initialize it using your database setup script from another repo.
 
 5. **Run the Application**:
    ```sh

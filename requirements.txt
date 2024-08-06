@@ -3,3 +3,4 @@ Flask-SQLAlchemy
 Flask-RESTful
 openai
 python-dotenv
+flask-cors

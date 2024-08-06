@@ -92,7 +92,7 @@ def convert_data_to_natural_language(data, user_query):
     if not data:
         return "I'm sorry, but there's no data available for the given query."
     
-    max_results = 25  # Limit the number of rows to display
+    max_results = 10  # Limit the number of rows to display
     limited_data = data[:max_results]
     data_str = "\n".join([str(row) for row in limited_data])
     additional_info = "" if len(data) <= max_results else f"\nAnd {len(data) - max_results} more rows not displayed."

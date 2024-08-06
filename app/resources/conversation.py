@@ -41,19 +41,15 @@ class ConversationResource(Resource):
                 conversations_list = [
                     {
                         "id": conv.id,
-                        "user_query_summary": conv.user_query_summary
+                        "user_query_summary": conv.user_query_summary,
+                        "date_time": conv.date_time
                     } for conv in conversations
                 ]
                 return {"conversations": conversations_list}, 200
 
-    def delete(self):
-        parser = reqparse.RequestParser()
-        parser.add_argument('id', type=int, required=True, help="Conversation ID cannot be blank!")
-        args = parser.parse_args()
-
-        conversation_id = args['id']
+    def delete(self, id):
         with get_db() as db:
-            conversation = db.query(Conversation).filter_by(id=conversation_id).first()
+            conversation = db.query(Conversation).filter_by(id=id).first()
             if conversation:
                 db.delete(conversation)
                 db.commit()

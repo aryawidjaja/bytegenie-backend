@@ -54,12 +54,13 @@ class QueryResource(Resource):
                     raise
         
         if not any(row != (None,) for row in data):
-            return {"error": "Could not find any relevant data, please provide more detailed prompt."}, 500
-
-        data = [{k: v for k, v in zip(columns, row) if v is not None} for row in data if row != (None,)]
-        retrieved_data = str(data)
-        
-        natural_language_response = convert_data_to_natural_language(data, user_query)
+            natural_language_response = "Could not find any relevant data, please provide more detailed prompt."
+            return {"response": natural_language_response}
+        else:
+            data = [{k: v for k, v in zip(columns, row) if v is not None} for row in data if row != (None,)]
+            retrieved_data = str(data)
+            
+            natural_language_response = convert_data_to_natural_language(data, user_query)
         
         # Save conversation details to the database
         conversation = Conversation(

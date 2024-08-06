@@ -1,0 +1,29 @@
+# Virtual environment
+venv/
+__pycache__/
+
+# Database files
+database/events_company_people.db
+
+# Python files
+*.pyc
+*.pyo
+*.pyd
+*.swp
+
+# Configuration files
+.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.idea/
+.vscode/
